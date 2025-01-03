@@ -1,23 +1,18 @@
-"use client";
-import { useState } from "react";
-import ListOfGifs from "./components/ListOfGifs";
+"use client"
+import { ReactElement, useState } from "react"
+import ListOfGifs from "./components/ListOfGifs"
+import InputKeyword from "./components/InputKeyword"
 
 export default function Home() {
-  const [keyword, setKeyword] = useState("vini");
+  const [keyword, setKeyword] = useState("vini jr")
+
+  function handleKeyword (event: React.ChangeEvent<HTMLInputElement>){
+    setKeyword(event.target.value)
+  }
 
   return (
-    <div className="flex flex-col w-screen h-screen)">
-
-      <div className="flex  my-4">
-        <h1 className="text-[#e9e9e9] font-semibold text-xl text-right">GifGenerate</h1>
-        <input
-          type="text"
-          onChange={(e) => {
-            setKeyword(e.target.value);
-          }}
-          className="text-black border border-black p-1 rounded-sm"
-        />
-      </div>
+    <div className="flex flex-col w-screen h-screen">
+      <InputKeyword handleKeyword={handleKeyword}/>
 
       <div className="flex justify-center flex-wrap">
         <ListOfGifs keyword={keyword} />

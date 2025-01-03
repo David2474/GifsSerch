@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Terminal } from "lucide-react"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function Gifs({ title, url }) {
   const [showAlert, setShowAlert] = useState(false)
@@ -32,9 +33,12 @@ export default function Gifs({ title, url }) {
     {
       showAlert && (
         <div className="fixed bg-black inset-0 bg-opacity-50 flex justify-center items-center z-50">
-          <Alert className="w-2/6 ">
+          <Alert className="w-4/12 ">
+          <AlertTitle>
+            <Terminal className="h-4 w-4" />
+          </AlertTitle>
             <AlertDescription>
-              <p className="font-semibold text-lg">Texto copido con exito!!</p>
+              <p className="font-semibold text-lg text-[#3b3736]">Texto copido con exito!!</p>
             </AlertDescription>
           </Alert>
         </div>

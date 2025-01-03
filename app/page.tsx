@@ -6,8 +6,22 @@ export default function Home() {
   const [keyword, setKeyword] = useState("vini");
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <ListOfGifs keyword={keyword} />
+    <div className="flex flex-col w-screen h-screen)">
+
+      <div className="flex  my-4">
+        <h1 className="text-[#e9e9e9] font-semibold text-xl text-right">GifGenerate</h1>
+        <input
+          type="text"
+          onChange={(e) => {
+            setKeyword(e.target.value);
+          }}
+          className="text-black border border-black p-1 rounded-sm"
+        />
+      </div>
+
+      <div className="flex justify-center flex-wrap">
+        <ListOfGifs keyword={keyword} />
+      </div>
     </div>
   );
 }

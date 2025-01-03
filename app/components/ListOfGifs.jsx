@@ -10,7 +10,7 @@ export default function ListOfGifs({ keyword }) {
     getGifs({ keyword }).then((gifs) => setGifts(gifs));
   }, [keyword]);
 
-  return gif.map(({ title, id, url }) => (
-    <Gift key={id} title={title} id={id} url={url} />
+  return gif.map(({ id, url }) => (
+    <Gift key={id}  url={url} />
   ));
 }
